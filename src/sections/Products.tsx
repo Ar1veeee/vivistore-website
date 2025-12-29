@@ -1,4 +1,3 @@
-// src/sections/Products.tsx
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Star, Heart, MessageCircle, Send } from 'lucide-react';
@@ -130,8 +129,6 @@ const Products: React.FC<ProductsProps> = ({
                                                     <Heart className="w-5 h-5 group-hover/heart:fill-current" />
                                                 </button>
                                             </div>
-
-                                            {/* Overlay Hover untuk tombol cepat */}
                                             <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                                         </div>
                                     </div>

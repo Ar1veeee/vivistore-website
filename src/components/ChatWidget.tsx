@@ -1,4 +1,3 @@
-// src/components/ChatWidget.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot, Smartphone, MapPin, ShieldCheck } from 'lucide-react';
@@ -176,7 +175,7 @@ const ChatWidget: React.FC = () => {
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`relative w-18 h-18 rounded-[2.2rem] flex items-center justify-center text-white shadow-2xl transition-all duration-700 ${isOpen ? 'bg-slate-900 rotate-90 border border-white/10' : 'bg-indigo-600 shadow-indigo-500/40'
+                className={`relative cursor-pointer w-18 h-18 rounded-[2.2rem] flex items-center justify-center text-white shadow-2xl transition-all duration-700 ${isOpen ? 'bg-slate-900 rotate-90 border border-white/10' : 'bg-indigo-600 shadow-indigo-500/40'
                     }`}
             >
                 <AnimatePresence mode="wait">

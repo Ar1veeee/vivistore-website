@@ -129,7 +129,7 @@ const products: Product[] = [
         reviews: 456,
     },
     {
-        id: 14,
+        id: 15,
         name: "Xiaomi Redmi Pad SE 8.7",
         price: 1799000,
         image: "/images/xiaomi-redmi-pad-se.webp",
@@ -138,7 +138,7 @@ const products: Product[] = [
         reviews: 456,
     },
     {
-        id: 15,
+        id: 16,
         name: "Lenovo Thinkpad L390",
         price: 1799000,
         image: "/images/lenovo-thinkpad-l390.webp",
@@ -147,7 +147,7 @@ const products: Product[] = [
         reviews: 456,
     },
     {
-        id: 16,
+        id: 17,
         name: "Lenovo ThinkPad T470s",
         price: 1799000,
         image: "/images/lenovo-thinkpad-t370s.webp",
@@ -156,7 +156,7 @@ const products: Product[] = [
         reviews: 456,
     },
     {
-        id: 17,
+        id: 18,
         name: "Lenovo Thinkpad L380",
         price: 1799000,
         image: "/images/lenovo-thinkpad-l390.webp",
