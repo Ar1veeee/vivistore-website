@@ -117,6 +117,8 @@ const Products: React.FC<ProductsProps> = ({
                                     <div className='group'>
                                         <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-100 aspect-4/5 mb-6 shadow-sm group-hover:shadow-2xl transition-all duration-500">
                                             <img
+                                                loading="eager"
+                                                fetchPriority="high"
                                                 src={product.image}
                                                 alt={product.name}
                                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"

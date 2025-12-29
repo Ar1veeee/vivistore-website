@@ -86,6 +86,7 @@ const Header: React.FC<HeaderProps> = ({
                     <div className="flex items-center gap-2 md:gap-4 md:hidden">
                         <motion.button
                             whileTap={{ scale: 0.9 }}
+                            aria-label='Menu Mobile'
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             className="w-11 h-11 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-slate-900"
                         >

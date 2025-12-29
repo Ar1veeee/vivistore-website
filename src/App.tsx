@@ -19,7 +19,7 @@ const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
-  const categories = ['all', 'smartphone', 'laptop', 'tablet', 'accessories'];
+  const categories = ['all', 'smartphone', 'laptop', 'tablet', 'smartwatch'];
 
   const products: Product[] = productsData;
   const reviews: Review[] = reviewsData;

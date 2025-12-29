@@ -47,7 +47,7 @@ const About = () => {
                     >
                         <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
+                                src="/images/store-2.webp"
                                 alt="Vivi Store"
                                 className="w-full h-125 object-cover hover:scale-105 transition-transform duration-700"
                             />

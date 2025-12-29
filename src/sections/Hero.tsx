@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                         </p>
 
                         {/* CTA Group */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
@@ -92,8 +92,12 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                             {/* Main Product Image Container */}
                             <div className="relative rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-4 border-white group">
                                 <img
-                                    src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=800"
+                                    src="/images/store.webp"
                                     alt="Premium Gadget"
+                                    loading="eager"
+                                    fetchPriority="high"
+                                    width="800"
+                                    height="1000"
                                     className="w-full h-125 lg:h-150 object-cover transition-transform duration-1000 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent" />
