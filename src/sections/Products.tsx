@@ -84,7 +84,7 @@ const Products: React.FC<ProductsProps> = ({
                                 aria-label="Kategori Filter"
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
-                                className={`px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${selectedCategory === cat
+                                className={`px-8 py-4 cursor-pointer rounded-2xl font-black text-xs uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${selectedCategory === cat
                                     ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-100 -translate-y-1'
                                     : 'bg-white text-slate-600 border border-slate-300 hover:border-indigo-200 hover:text-indigo-600'
                                     }`}

@@ -52,8 +52,8 @@ const Header: React.FC<HeaderProps> = ({
                             />
                             <span className="relative text-white font-black text-xl italic leading-none">V</span>
                         </div>
-                        <div className="hidden sm:flex flex-col -space-y-1">
-                            <span className="text-lg font-black tracking-tighter text-slate-900">
+                        <div className="flex flex-col -space-y-1">
+                            <span className="text-sm md:text-lg font-black tracking-tighter text-slate-900">
                                 VIVI<span className="text-indigo-600">STORE.</span>
                             </span>
                             <span className="text-xs font-black uppercase tracking-[0.3em] text-slate-600">Singosaren</span>
@@ -66,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({
                             <button
                                 key={item}
                                 onClick={() => scrollToSection(item)}
-                                className={`relative px-5 py-2 text-[10px] font-black uppercase tracking-widest transition-all duration-500 rounded-full ${
+                                className={`relative px-5 py-2 text-xs cursor-pointer font-black uppercase tracking-widest transition-all duration-500 rounded-full ${
                                     activeSection === item ? 'text-white' : 'text-slate-500 hover:text-slate-900'
                                 }`}
                             >
@@ -88,7 +88,7 @@ const Header: React.FC<HeaderProps> = ({
                             whileTap={{ scale: 0.9 }}
                             aria-label='Menu Mobile'
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="w-11 h-11 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-slate-900"
+                            className="w-11 h-11 cursor-pointer rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-slate-900"
                         >
                             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
                         </motion.button>
@@ -118,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({
                             {/* Drawer Header */}
                             <div className="p-8 flex justify-between items-center border-b border-slate-50">
                                 <span className="text-xs font-black uppercase tracking-[0.3em] text-slate-400">Explore Menu</span>
-                                <button onClick={() => setMobileMenuOpen(false)} className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <button onClick={() => setMobileMenuOpen(false)} className="w-10 h-10 cursor-pointer bg-slate-100 rounded-full flex items-center justify-center">
                                     <X size={20} />
                                 </button>
                             </div>
@@ -137,7 +137,7 @@ const Header: React.FC<HeaderProps> = ({
                                         }}
                                         className="relative group py-2"
                                     >
-                                        <span className={`text-5xl font-black uppercase tracking-tighter transition-all duration-300 ${
+                                        <span className={`cursor-pointer text-4xl font-black uppercase tracking-tighter transition-all duration-300 ${
                                             activeSection === item ? 'text-indigo-600 italic' : 'text-slate-900 group-hover:text-indigo-600'
                                         }`}>
                                             {item}

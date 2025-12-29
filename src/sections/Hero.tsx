@@ -64,14 +64,14 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(79, 70, 229, 0.3)" }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => scrollToSection('products')}
-                                className="w-full sm:w-auto bg-slate-950 text-white px-10 py-6 rounded-4xl font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all"
+                                className="w-full sm:w-auto cursor-pointer bg-slate-950 text-white px-10 py-6 rounded-4xl font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all"
                             >
                                 Lihat Produk <ChevronRight size={18} />
                             </motion.button>
 
                             <button
                                 onClick={() => setIsVideoOpen(true)}
-                                className="group flex items-center gap-4 text-slate-900 font-black text-xs uppercase tracking-widest hover:text-indigo-600 transition-all"
+                                className="group flex cursor-pointer items-center gap-4 text-slate-900 font-black text-xs uppercase tracking-widest hover:text-indigo-600 transition-all"
                             >
                                 <div className="w-14 h-14 bg-white shadow-xl rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all">
                                     <Play size={20} className="fill-current ml-1" />
