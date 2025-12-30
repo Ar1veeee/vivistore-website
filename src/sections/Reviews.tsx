@@ -1,4 +1,3 @@
-// src/sections/Reviews.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, CheckCircle2 } from 'lucide-react';
@@ -9,7 +8,6 @@ interface ReviewsProps {
 }
 
 const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
-    // Duplikasi data reviews beberapa kali agar tidak ada jeda saat looping
     const infiniteReviews = [...reviews, ...reviews, ...reviews, ...reviews];
 
     return (
@@ -33,21 +31,20 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
                     </h2>
                 </div>
 
-                {/* SINGLE LINE AUTO-SLIDER */}
+                {/* Auto Slider */}
                 <div className="relative flex overflow-hidden py-10">
                     <motion.div
                         animate={{
-                            x: [0, -2000], // Menyesuaikan dengan panjang total kartu
+                            x: [0, -2000],
                         }}
                         transition={{
                             x: {
                                 repeat: Infinity,
                                 repeatType: "loop",
-                                duration: 40, // Atur durasi (semakin besar semakin lambat)
+                                duration: 40,
                                 ease: "linear",
                             },
                         }}
-                        // Fitur Pause saat Hover
                         whileHover={{ animationPlayState: "paused" }}
                         className="flex gap-8 px-4"
                     >
@@ -56,7 +53,6 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
                                 key={`${review.id}-${idx}`}
                                 className="w-112.5 shrink-0 relative group"
                             >
-                                {/* Glow Effect Behind Card */}
                                 <div className="absolute inset-0 bg-indigo-500/5 blur-2xl group-hover:bg-indigo-500/15 transition-all duration-700 rounded-[3rem]" />
 
                                 <div className="relative h-full bg-white/3 backdrop-blur-md border border-white/10 p-10 rounded-[3rem] hover:border-indigo-500/40 transition-all duration-500">
@@ -93,7 +89,6 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
                         ))}
                     </motion.div>
 
-                    {/* linear Fade di Sisi Kiri & Kanan agar slider terlihat halus "menghilang" */}
                     <div className="absolute inset-y-0 left-0 w-40 bg-linear-to-r from-[#020617] to-transparent z-20 pointer-events-none" />
                     <div className="absolute inset-y-0 right-0 w-40 bg-linear-to-l from-[#020617] to-transparent z-20 pointer-events-none" />
                 </div>

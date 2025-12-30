@@ -1,4 +1,3 @@
-// src/components/Footer.tsx
 import { motion } from 'framer-motion';
 import {
     Instagram,
@@ -6,7 +5,8 @@ import {
     MessageCircle,
     MapPin,
     ShieldCheck,
-    Package
+    Package,
+    Mail
 } from 'lucide-react';
 
 const Footer = () => {
@@ -27,7 +27,6 @@ const Footer = () => {
 
     return (
         <footer className="bg-[#020617] text-white pt-24 pb-12 px-6 relative overflow-hidden">
-            {/* Minimalist Background Aura */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent" />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-40 bg-indigo-600/10 blur-[100px] rounded-full pointer-events-none" />
 
@@ -39,7 +38,7 @@ const Footer = () => {
                     viewport={{ once: true }}
                     className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20"
                 >
-                    {/* Brand Section - 5 Columns */}
+                    {/* Brand Section */}
                     <div className="lg:col-span-5 space-y-8">
                         <motion.div variants={itemVariants} className="flex flex-col gap-4">
                             <h3 className="text-4xl font-black tracking-tighter italic">
@@ -56,12 +55,12 @@ const Footer = () => {
                                 <ShieldCheck size={16} /> 100% Original
                             </div>
                             <div className="flex items-center gap-2 text-indigo-400 font-black text-[10px] uppercase tracking-widest">
-                                <Package size={16} /> Solo COD
+                                <Package size={16} /> COD Area Solo
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Navigation - 3 Columns */}
+                    {/* Navigation */}
                     <div className="lg:col-span-3">
                         <motion.h4 variants={itemVariants} className="font-black text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-8">Navigation</motion.h4>
                         <motion.ul variants={itemVariants} className="space-y-4">
@@ -76,7 +75,7 @@ const Footer = () => {
                         </motion.ul>
                     </div>
 
-                    {/* Direct Contact Bento - 4 Columns */}
+                    {/* Direct Contact Bento */}
                     <div className="lg:col-span-4">
                         <motion.div
                             variants={itemVariants}
@@ -114,7 +113,7 @@ const Footer = () => {
                             </div>
 
                             {/* Decorative Icon */}
-                            <Instagram className="absolute -bottom-6 -right-6 w-32 h-32 text-white/2 group-hover:text-indigo-500/5 transition-all duration-700 rotate-12" />
+                            <Mail className="absolute -bottom-6 -right-6 w-32 h-32 text-white/2 group-hover:text-indigo-500/5 transition-all duration-700 rotate-12" />
                         </motion.div>
                     </div>
                 </motion.div>
@@ -133,7 +132,7 @@ const Footer = () => {
                         <div className="hidden md:block w-px h-4 bg-white/10" />
                         <div className="flex gap-4">
                             <a
-                                href="https://instagram.com/aliefarfn"
+                                href="https://instagram.com/davinashakilaa"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Follow kami di Instagram @aliefarfn"

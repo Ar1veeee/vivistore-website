@@ -1,4 +1,3 @@
-// src/App.tsx
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './sections/Hero';
@@ -10,8 +9,8 @@ import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import type { Product, Review } from './types/types';
-import productsData from './data/products';
-import reviewsData from './data/reviews';
+import {products as productsData} from './data/products';
+import {reviews as reviewsData} from './data/reviews';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');

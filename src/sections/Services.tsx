@@ -1,56 +1,14 @@
-// src/sections/Services.tsx
-import { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Smartphone,
-    RefreshCcw,
-    Wrench,
-    MessagesSquare,
     X,
     ArrowRight,
 } from 'lucide-react';
-
-const servicesData = [
-    {
-        id: 1,
-        title: 'Personalized Experience',
-        subtitle: 'Pra-Penjualan',
-        desc: 'Kami percaya bahwa setiap pelanggan memiliki kebutuhan yang unik. Konsultasi gratis dengan admin untuk mengetahui spesifikasi teknis yang sesuai dengan profil pengguna (Contoh: pelajar, fotografer, atau pebisnis). Kami membantu Anda memilih perangkat yang bukan hanya tren, tapi benar-benar menunjang produktivitas harian Anda.',
-        icon: Smartphone,
-        color: 'from-blue-600 to-cyan-500',
-        size: 'lg'
-    },
-    {
-        id: 2,
-        title: 'Seamless Setup',
-        subtitle: 'Pasca-Penjualan',
-        desc: 'Memastikan pelanggan dapat langsung menggunakan perangkat mereka tanpa hambatan teknis. Layanan migrasi data dari perangkat lama ke perangkat baru (iOS/Android) secara tuntas dan aman. Bantuan aktivasi akun, pengaturan keamanan (biometrik), dan instalasi aplikasi produktivitas dasar.',
-        icon: RefreshCcw,
-        color: 'from-indigo-600 to-blue-600',
-        size: 'sm'
-    },
-    {
-        id: 3,
-        title: 'Proteksi Investasi',
-        subtitle: 'Jaminan Kelangsungan',
-        desc: 'Garansi ganti unit baru dalam satu hari jika ditemukan cacat pabrik tanpa prosedur berbelit. Kami bertindak sebagai perantara resmi antara pelanggan dengan Service Center pusat untuk mempermudah klaim garansi di masa mendatang, memastikan perangkat Anda selalu dalam kondisi prima.',
-        icon: Wrench,
-        color: 'from-violet-600 to-fuchsia-600',
-        size: 'sm'
-    },
-    {
-        id: 4,
-        title: 'Inovasi & Loyalitas',
-        subtitle: 'Solo COD & Trade-in',
-        desc: 'Program tukar tambah dengan sistem penilaian transparan. Kami juga menyediakan layanan "Solo COD Tanpa Ongkir" sebagai solusi belanja gadget paling praktis dan terpercaya di Surakarta dengan pembayaran di tempat setelah barang diperiksa.',
-        icon: MessagesSquare,
-        color: 'from-fuchsia-600 to-pink-500',
-        size: 'lg'
-    }
-];
+import { servicesData } from '../data/services';
+import type { Service } from '../types/types';
 
 const Services = () => {
-    const [activeService, setActiveService] = useState<typeof servicesData[0] | null>(null);
+    const [activeService, setActiveService] = useState<Service | null>(null);
 
     useEffect(() => {
         if (activeService) {
@@ -96,12 +54,11 @@ const Services = () => {
                                 ease: [0.22, 1, 0.36, 1],
                                 delay: idx * 0.15
                             }}
-                            className={`group relative overflow-hidden rounded-[2.5rem] bg-slate-50 border border-slate-100 p-10 flex flex-col justify-between transition-all duration-700 hover:shadow-2xl hover:shadow-indigo-100/50 ${service.size === 'lg' ? 'md:col-span-3' : 'md:col-span-3 lg:col-span-2'
-                                }`}
+                            className={`group relative overflow-hidden rounded-[2.5rem] bg-slate-50 border border-slate-100 p-10 flex flex-col justify-between transition-all duration-700 hover:shadow-2xl hover:shadow-indigo-100/50 ${
+                                service.size === 'lg' ? 'md:col-span-3' : 'md:col-span-3 lg:col-span-2'
+                            }`}
                         >
-                            <div
-                                className="relative z-10 flex-1 flex flex-col justify-between"
-                            >
+                            <div className="relative z-10 flex-1 flex flex-col justify-between">
                                 <div>
                                     <motion.div
                                         className={`w-14 h-14 rounded-2xl bg-linear-to-br ${service.color} flex items-center justify-center mb-10 shadow-lg`}
@@ -109,8 +66,12 @@ const Services = () => {
                                     >
                                         <service.icon className="w-7 h-7 text-white" />
                                     </motion.div>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-indigo-600 mb-2">{service.subtitle}</p>
-                                    <h3 className="text-2xl font-black text-slate-900 leading-tight mb-4">{service.title}</h3>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-indigo-600 mb-2">
+                                        {service.subtitle}
+                                    </p>
+                                    <h3 className="text-2xl font-black text-slate-900 leading-tight mb-4">
+                                        {service.title}
+                                    </h3>
                                     <p className="text-slate-500 text-sm font-medium line-clamp-2">
                                         {service.desc}
                                     </p>
@@ -127,7 +88,6 @@ const Services = () => {
                                 </motion.div>
                             </div>
 
-                            {/* Hover Gradient Background */}
                             <motion.div
                                 className={`absolute inset-0 bg-linear-to-br ${service.color} opacity-0`}
                                 whileHover={{ opacity: 0.06 }}
@@ -138,21 +98,18 @@ const Services = () => {
                 </div>
             </div>
 
-            {/* DRAWER DETAIL (tetap sama, hanya dibuka saat klik card) */}
+            {/* DRAWER DETAIL */}
             <AnimatePresence mode="wait">
                 {activeService && (
                     <>
-                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 0.4, ease: 'easeOut' }}
                             onClick={() => setActiveService(null)}
                             className="fixed inset-0 bg-slate-950/60 backdrop-blur-xl z-100"
                         />
 
-                        {/* Drawer Panel */}
                         <motion.div
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
@@ -165,13 +122,11 @@ const Services = () => {
                             }}
                             className="fixed top-0 right-0 h-full w-full max-w-xl bg-white z-101 shadow-[-30px_0_60px_rgba(0,0,0,0.15)] flex flex-col"
                         >
-                            {/* Header */}
                             <div className="p-8 flex justify-between items-center border-b border-slate-100">
                                 <div className="flex items-center gap-4">
                                     <motion.div
                                         initial={{ scale: 0.8, rotate: -12 }}
                                         animate={{ scale: 1, rotate: 0 }}
-                                        transition={{ duration: 0.5, ease: 'easeOut' }}
                                         className={`w-12 h-12 rounded-xl bg-linear-to-br ${activeService.color} flex items-center justify-center text-white`}
                                     >
                                         <activeService.icon className="w-6 h-6" />
@@ -188,7 +143,6 @@ const Services = () => {
                                 </motion.button>
                             </div>
 
-                            {/* Content */}
                             <div className="flex-1 overflow-y-auto p-8 md:p-12">
                                 <motion.div
                                     initial={{ opacity: 0, y: 40 }}
@@ -222,7 +176,6 @@ const Services = () => {
                                 </motion.div>
                             </div>
 
-                            {/* Footer */}
                             <div className="p-8 border-t border-slate-100">
                                 <motion.button
                                     whileHover={{ scale: 1.02, y: -2 }}

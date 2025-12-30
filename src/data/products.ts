@@ -1,7 +1,6 @@
-// src/data/products.ts
 import type { Product } from "../types/types";
 
-const products: Product[] = [
+export const products: Product[] = [
     {
         id: 1,
         name: "Samsung Galaxy Z Fold7 5G",
@@ -165,5 +164,3 @@ const products: Product[] = [
         reviews: 456,
     },
 ];
-
-export default products;

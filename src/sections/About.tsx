@@ -1,43 +1,12 @@
-// src/sections/About.tsx
 import { motion } from 'framer-motion';
-import { ShieldCheck, Star, Users, Heart, Store, Van } from 'lucide-react';
+import { aboutStats, aboutFeatures } from '../data/abouts';
 
 const About = () => {
-    const stats = [
-        { icon: Users, label: 'Pelanggan Setia', value: '2.500+' },
-        { icon: Heart, label: 'Testimoni Positif', value: '1.200+' },
-        { icon: Store, label: 'Tahun Beroperasi', value: '8+' },
-    ];
-
-    const features = [
-        {
-            icon: ShieldCheck,
-            title: 'Produk Original & Bergaransi',
-            desc: 'Setiap gadget yang kami jual 100% original dengan garansi resmi distributor. Kami bantu klaim jika ada masalah.',
-            color: 'text-emerald-500',
-            bg: 'bg-emerald-50'
-        },
-        {
-            icon: Van,
-            title: 'Melayani COD',
-            desc: 'Kami menjamin keamanan dan kenyamanan pelanggan saat melakukan COD di area Surakarta & sekitarnya.',
-            color: 'text-amber-500',
-            bg: 'bg-amber-50'
-        },
-        {
-            icon: Star,
-            title: 'Pelayanan Ramah & Sabar',
-            desc: 'Kami siap bantu Anda memilih gadget yang paling sesuai kebutuhan dan budget, tanpa paksaan.',
-            color: 'text-indigo-500',
-            bg: 'bg-indigo-50'
-        }
-    ];
-
     return (
         <section id="about" className="py-32 px-6 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
 
-                {/* Top Section: Storytelling */}
+                {/* Top Section */}
                 <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -48,11 +17,12 @@ const About = () => {
                         <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
                             <img
                                 src="/images/store-2.webp"
-                                alt="Vivi Store"
+                                alt="Interior Vivi Store - Toko gadget premium di Surakarta"
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-125 object-cover hover:scale-105 transition-transform duration-700"
                             />
                         </div>
-                        {/* Dekorasi Aksen */}
                         <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-indigo-600/5 rounded-full blur-3xl z-0"></div>
                         <div className="absolute -top-10 -left-10 w-40 h-40 border-2 border-indigo-100 rounded-4xl z-0 rotate-12"></div>
                     </motion.div>
@@ -72,13 +42,13 @@ const About = () => {
                             </span>
                         </h2>
                         <p className="text-lg text-slate-500 leading-relaxed mb-10">
-                            Vivi Kami mengusung konsep "One-Stop Gadget Solution", di mana pelanggan tidak hanya datang untuk membeli produk, tetapi mendapatkan solusi menyeluruh atas kebutuhan teknologi mereka..
+                            Kami mengusung konsep "One-Stop Gadget Solution", di mana pelanggan tidak hanya datang untuk membeli produk, tetapi mendapatkan solusi menyeluruh atas kebutuhan teknologi mereka.
                         </p>
 
                         <div className="grid grid-cols-3 gap-6">
-                            {stats.map((stat, i) => (
+                            {aboutStats.map((stat, i) => (
                                 <div key={i} className="text-center lg:text-left">
-                                    <p className="text-3xl font-black text-slate-900">{stat.value}</p>
+                                    <p className="text-3xl font-black text-slate-900 tabular-nums">{stat.value}</p>
                                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">{stat.label}</p>
                                 </div>
                             ))}
@@ -88,7 +58,7 @@ const About = () => {
 
                 {/* Bottom Section: Feature Cards */}
                 <div className="grid md:grid-cols-3 gap-8">
-                    {features.map((feature, idx) => (
+                    {aboutFeatures.map((feature, idx) => (
                         <motion.div
                             key={idx}
                             initial={{ opacity: 0, y: 30 }}

@@ -1,19 +1,19 @@
-// src/sections/Contact.tsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Clock, ArrowUpRight, MessageSquare, UserCheck, CheckCircle2, SendHorizonal } from 'lucide-react';
+import {
+    Clock,
+    ArrowUpRight,
+    MessageSquare,
+    UserCheck,
+    CheckCircle2,
+    SendHorizonal,
+} from 'lucide-react';
+import { adminContacts } from '../data/contacts';
 
 const Contact = () => {
     const [selectedAdminIdx, setSelectedAdminIdx] = useState(1);
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
-
-    const adminContacts = [
-        { role: 'Owner', name: 'Ibu Wahyuni', phone: '628989803859', color: 'bg-indigo-50 text-indigo-600', border: 'border-indigo-200' },
-        { role: 'Admin 1', name: 'Kak Dian', phone: '6282241765913', color: 'bg-emerald-50 text-emerald-600', border: 'border-emerald-200' },
-        { role: 'Admin 2', name: 'Kak Davina', phone: '628974070803', color: 'bg-violet-50 text-violet-600', border: 'border-violet-200' },
-        { role: 'Admin 3', name: 'Bapak Ardi', phone: '628983553888', color: 'bg-fuchsia-50 text-fuchsia-600', border: 'border-fuchsia-200' },
-    ];
 
     const handleWhatsAppSend = (e: React.FormEvent) => {
         e.preventDefault();
@@ -24,7 +24,6 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-32 px-6 relative overflow-hidden bg-white text-slate-900">
-            {/* Soft Ambient Background */}
             <div className="absolute top-0 right-0 w-125 h-125 bg-indigo-50/50 blur-[120px] rounded-full -mr-48 -mt-48" />
 
             <div className="max-w-7xl mx-auto relative z-10">
@@ -51,7 +50,7 @@ const Contact = () => {
                         className="lg:text-right space-y-2"
                     >
                         <p className="text-slate-400 font-bold uppercase tracking-widest text-xs">Lokasi Toko</p>
-                        <p className="text-xl font-black text-slate-900 leading-tight">Matahari Center Celullar, <br /> Surakarta, Indonesia</p>
+                        <p className="text-xl font-black text-slate-900 leading-tight">Matahari Center Cellular, <br /> Surakarta, Indonesia</p>
                     </motion.div>
                 </div>
 
@@ -68,10 +67,11 @@ const Contact = () => {
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                         onClick={() => setSelectedAdminIdx(i)}
-                                        className={`relative p-6 rounded-4xl border-2 text-left transition-all duration-300 ${selectedAdminIdx === i
+                                        className={`relative p-6 rounded-4xl border-2 text-left transition-all duration-300 ${
+                                            selectedAdminIdx === i
                                                 ? `${contact.border} bg-white shadow-2xl shadow-slate-200 ring-4 ring-slate-50`
                                                 : 'border-transparent bg-slate-50/50 hover:bg-slate-50'
-                                            }`}
+                                        }`}
                                     >
                                         <div className={`w-10 h-10 ${contact.color} rounded-xl flex items-center justify-center mb-4`}>
                                             <MessageSquare className="w-5 h-5" />
@@ -92,7 +92,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        {/* GOOGLE MAPS SECTION */}
+                        {/* Google Maps */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -103,11 +103,7 @@ const Contact = () => {
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.0371914251785!2d110.8228308758832!3d-7.570954974786419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a1664a5e502e5%3A0x136b9a98c0cacbb6!2sSingosaren%20Plaza!5e0!3m2!1sid!2sid!4v1709100000000!5m2!1sid!2sid"
                                     width="100%"
                                     height="100%"
-                                    style={{
-                                        border: 0,
-                                        filter: 'grayscale(0.3) contrast(1.1)',
-                                        borderRadius: '2rem'
-                                    }}
+                                    style={{ border: 0, filter: 'grayscale(0.3) contrast(1.1)', borderRadius: '2rem' }}
                                     allowFullScreen
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
@@ -115,7 +111,6 @@ const Contact = () => {
                                     title="Lokasi Matahari Center Cellular di Singosaren Plaza, Surakarta"
                                 ></iframe>
 
-                                {/* Hover Overlay Information */}
                                 <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-5 rounded-2xl text-white flex justify-between items-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 shadow-2xl">
                                     <div>
                                         <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-0.5">Showroom Solo</p>
@@ -136,14 +131,13 @@ const Contact = () => {
                         </motion.div>
                     </div>
 
-                    {/* Floating Form */}
+                    {/* Form WhatsApp */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         className="lg:col-span-7 bg-slate-50/50 rounded-[3.5rem] p-8 lg:p-16 border border-slate-100"
                     >
                         <form onSubmit={handleWhatsAppSend} className="space-y-10">
-                            {/* Input Nama */}
                             <div className="relative group">
                                 <input
                                     required
@@ -156,7 +150,6 @@ const Contact = () => {
                                 <label className="absolute -top-6 left-0 text-sm lg:text-md font-black uppercase tracking-[0.2em] text-slate-600">Siapa nama Anda?</label>
                             </div>
 
-                            {/* Info Admin Terpilih */}
                             <div className="flex items-center gap-4 py-4 px-6 mb-12 bg-white rounded-2xl border border-slate-100 shadow-sm">
                                 <div className={`w-12 h-12 rounded-full ${adminContacts[selectedAdminIdx].color} flex items-center justify-center font-black`}>
                                     {adminContacts[selectedAdminIdx].name.charAt(0)}
@@ -167,7 +160,6 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            {/* Input Pesan */}
                             <div className="relative group">
                                 <textarea
                                     required
@@ -185,13 +177,12 @@ const Contact = () => {
                                     whileHover={{ scale: 1.02, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     type="submit"
-                                    className="w-full bg-indigo-600 text-white py-8 rounded-[4xl font-black text-xs uppercase tracking-[0.4em] flex items-center justify-center gap-4 shadow-2xl shadow-indigo-200 hover:bg-slate-900 transition-all duration-500"
+                                    className="w-full bg-indigo-600 text-white py-8 rounded-[4xl] font-black text-xs uppercase tracking-[0.4em] flex items-center justify-center gap-4 shadow-2xl shadow-indigo-200 hover:bg-slate-900 transition-all duration-500"
                                 >
                                     Kirim Sekarang <SendHorizonal className="w-5 h-5" />
                                 </motion.button>
                             </div>
 
-                            {/* Meta Info */}
                             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 opacity-60">
                                 <div className="flex items-center gap-3">
                                     <Clock className="w-4 h-4 text-indigo-600" />

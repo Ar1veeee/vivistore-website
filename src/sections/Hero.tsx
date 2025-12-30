@@ -1,4 +1,3 @@
-// src/sections/Hero.tsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Play, X, CheckCircle2 } from 'lucide-react';
@@ -24,14 +23,15 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
-                    {/* --- SISI KIRI --- */}
+                    {/* --- Left Side --- */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         className="lg:col-span-7"
                     >
-                        {/* Status Badge */}
+
+                        {/* Badge */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -42,6 +42,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                             </span>
                         </motion.div>
 
+                        {/* Header */}
                         <h1 className="text-6xl lg:text-[100px] font-black text-slate-950 leading-[0.85] tracking-tighter mb-10">
                             VIVI <br />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-600 via-violet-600 to-fuchsia-500">
@@ -49,6 +50,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                             </span>
                         </h1>
 
+                        {/* Description */}
                         <p className="text-xl text-slate-500 mb-12 max-w-xl leading-relaxed font-medium">
                             Temukan koleksi gadget kurasi terbaik kami dengan jaminan kualitas dan pelayanan purna jual paling premium di kelasnya.
                         </p>
@@ -81,7 +83,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                         </motion.div>
                     </motion.div>
 
-                    {/* --- SISI KANAN: BENTO IMAGE & STATS --- */}
+                    {/* --- Right Side --- */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -102,7 +104,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                                 />
                                 <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent" />
 
-                                {/* Label pada Gambar */}
+                                {/* Image Label */}
                                 <div className="absolute bottom-8 left-8">
                                     <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl flex items-center gap-3">
                                         <CheckCircle2 className="text-white w-5 h-5" />
@@ -115,7 +117,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                 </div>
             </div>
 
-            {/* --- VIDEO PLAYER MODAL --- */}
+            {/* Video Player */}
             <AnimatePresence>
                 {isVideoOpen && (
                     <motion.div
@@ -153,7 +155,6 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                             ></iframe>
                         </motion.div>
 
-                        {/* Klik Background untuk Close */}
                         <div
                             className="absolute inset-0 -z-10"
                             onClick={() => setIsVideoOpen(false)}

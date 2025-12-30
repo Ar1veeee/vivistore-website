@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({
                         : 'bg-transparent border-transparent'}
                 `}>
                     
-                    {/* LOGO SECTION */}
+                    {/* Logo Section */}
                     <motion.div
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({
                         </div>
                     </motion.div>
 
-                    {/* DESKTOP & TABLET NAVIGATION (Hidden on Mobile) */}
+                    {/* Desktop & Tablet Navigation */}
                     <nav className="hidden md:flex items-center bg-slate-100/30 p-1.5 rounded-full border border-slate-200/20 backdrop-blur-sm">
                         {navItems.map((item) => (
                             <button
@@ -82,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({
                         ))} 
                     </nav>
 
-                    {/* RIGHT ACTIONS */}
+                    {/* Right Action */}
                     <div className="flex items-center gap-2 md:gap-4 md:hidden">
                         <motion.button
                             whileTap={{ scale: 0.9 }}
@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({
                 </div>
             </div>
 
-            {/* FULLSCREEN MOBILE OVERLAY */}
+            {/* Mobile Mode */}
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <>
