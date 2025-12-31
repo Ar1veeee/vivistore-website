@@ -9,8 +9,6 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
-    const videoUrl = "https://www.youtube.com/embed/TVFezut77K0?autoplay=1&rel=0";
-
     return (
         <section id="home" className="relative pt-32 lg:pt-48 pb-24 px-6 overflow-hidden bg-[#FAFBFF]">
 
@@ -116,45 +114,42 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                     </motion.div>
                 </div>
             </div>
-
-            {/* Video Player */}
             <AnimatePresence>
                 {isVideoOpen && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-100 flex items-center justify-center p-4 lg:p-10 bg-slate-950/95 backdrop-blur-2xl"
+                        className="fixed inset-0 z-100 flex items-center justify-center p-6 bg-slate-950/95 backdrop-blur-2xl"
                     >
-                        {/* Tombol Close */}
+                        {/* Tombol Close - Diletakkan di pojok kanan atas layar */}
                         <motion.button
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             onClick={() => setIsVideoOpen(false)}
-                            className="absolute top-8 right-8 text-white/40 hover:text-white transition-colors z-110"
+                            className="absolute top-6 cursor-pointer right-6 text-white/40 hover:text-white transition-colors z-110 p-2"
                         >
-                            <X className="w-10 h-10" />
+                            <X className="w-8 h-8" />
                         </motion.button>
 
-                        {/* Box Video */}
+                        {/* Box Video Vertikal */}
                         <motion.div
                             initial={{ scale: 0.9, y: 40, opacity: 0 }}
                             animate={{ scale: 1, y: 0, opacity: 1 }}
                             exit={{ scale: 0.9, y: 40, opacity: 0 }}
-                            className="relative w-full max-w-5xl aspect-video bg-black rounded-[2.5rem] overflow-hidden shadow-[0_0_100px_rgba(79,70,229,0.2)] border border-white/10"
+                            className="relative w-full max-w-sm aspect-9/16 h-auto max-h-[85vh] bg-black rounded-4xl overflow-hidden shadow-[0_0_80px_rgba(79,70,229,0.3)] border border-white/10"
                         >
                             <iframe
-                                width="100%"
-                                height="100%"
-                                src={videoUrl}
-                                title="YouTube video player"
+                                src="/videos/video-demo.mp4"
+                                title="Video Player"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowFullScreen
-                                className="w-full h-full"
+                                className="w-full h-full object-cover"
                             ></iframe>
                         </motion.div>
 
+                        {/* Overlay Klik Luar untuk Close */}
                         <div
                             className="absolute inset-0 -z-10"
                             onClick={() => setIsVideoOpen(false)}
@@ -162,6 +157,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                     </motion.div>
                 )}
             </AnimatePresence>
+            );
         </section>
     );
 };
