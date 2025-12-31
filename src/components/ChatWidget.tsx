@@ -50,7 +50,7 @@ const ChatWidget: React.FC = () => {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[999] font-sans">
+        <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-999 font-sans">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -58,10 +58,10 @@ const ChatWidget: React.FC = () => {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
                         // Responsive Width & Height
-                        className="absolute bottom-20 right-0 w-[calc(100vw-2rem)] sm:w-[400px] h-[70vh] sm:h-[600px] max-h-[calc(100vh-120px)] bg-slate-950/90 backdrop-blur-3xl rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)] border border-white/10 overflow-hidden flex flex-col"
+                        className="absolute bottom-20 right-0 w-[calc(100vw-2rem)] sm:w-100 h-[70vh] sm:h-150 max-h-[calc(100vh-120px)] bg-slate-950/90 backdrop-blur-3xl rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)] border border-white/10 overflow-hidden flex flex-col"
                     >
                         {/* HEADER - Ukuran dikurangi sedikit untuk mobile */}
-                        <div className="p-5 md:p-7 bg-linear-to-b from-indigo-600/20 to-transparent flex-shrink-0">
+                        <div className="p-5 md:p-7 bg-linear-to-b from-indigo-600/20 to-transparent shrink-0">
                             <div className="flex justify-between items-center">
                                 <div className="flex items-center gap-3 md:gap-4">
                                     <div className="relative group">
@@ -118,7 +118,7 @@ const ChatWidget: React.FC = () => {
                         </div>
 
                         {/* FOOTER AREA */}
-                        <div className="p-5 md:p-7 bg-slate-900/30 flex-shrink-0">
+                        <div className="p-5 md:p-7 bg-slate-900/30 shrink-0">
                             {/* Horizontal Quick Replies */}
                             <div className="flex gap-2 overflow-x-auto no-scrollbar mb-4 py-1">
                                 {quickReplies.map((reply) => (
@@ -146,7 +146,7 @@ const ChatWidget: React.FC = () => {
                                     />
                                     <button
                                         onClick={() => handleSend()}
-                                        className="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-indigo-500 flex-shrink-0"
+                                        className="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-indigo-500 shrink-0"
                                     >
                                         <Send size={16} />
                                     </button>
@@ -162,7 +162,7 @@ const ChatWidget: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl md:rounded-[2rem] flex items-center justify-center text-white shadow-2xl transition-all duration-500 ${isOpen ? 'bg-slate-900 rotate-90 border border-white/10' : 'bg-indigo-600 shadow-indigo-500/40'
+                className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl md:rounded-4xl flex items-center justify-center text-white shadow-2xl transition-all duration-500 ${isOpen ? 'bg-slate-900 rotate-90 border border-white/10' : 'bg-indigo-600 shadow-indigo-500/40'
                     }`}
             >
                 {isOpen ? <X size={28} /> : (
