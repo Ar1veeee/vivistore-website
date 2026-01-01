@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
-                    {/* --- Left Side --- */}
+                    {/* Left Side */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                         </motion.div>
                     </motion.div>
 
-                    {/* --- Right Side --- */}
+                    {/* Right Side */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -122,7 +122,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-100 flex items-center justify-center p-6 bg-slate-950/95 backdrop-blur-2xl"
                     >
-                        {/* Tombol Close - Diletakkan di pojok kanan atas layar */}
+                        {/* Tombol Close */}
                         <motion.button
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
@@ -157,7 +157,6 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                     </motion.div>
                 )}
             </AnimatePresence>
-            );
         </section>
     );
 };
