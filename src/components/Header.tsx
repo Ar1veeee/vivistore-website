@@ -137,7 +137,7 @@ const Header: React.FC<HeaderProps> = ({
                                         }}
                                         className="relative group py-2"
                                     >
-                                        <span className={`cursor-pointer text-4xl font-black uppercase tracking-tighter transition-all duration-300 ${
+                                        <span className={`cursor-pointer text-2xl font-black uppercase tracking-tighter transition-all duration-300 ${
                                             activeSection === item ? 'text-indigo-600 italic' : 'text-slate-900 group-hover:text-indigo-600'
                                         }`}>
                                             {item}
